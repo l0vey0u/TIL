@@ -1,0 +1,7 @@
+. Windows CMD
+
+ . 폴더 만들기
+ _ mkdir, md
+ 
+ . 현재 날짜 / 시간 얻기
+ _ %date%, %time% ( 환경 변수 이용 )

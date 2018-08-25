@@ -1,0 +1,18 @@
+2. 텍스트 관련 태그
+  바. 표
+    a. <table> - 표 전체 윤곽
+	   border 속성 : 테두리 구분 지어줌
+	   aria-describedby : 표에 대한 설명 제공
+	b. <tr> <td> : 행, 열
+	c. <th> : 제목 셀, <td>의 강조형
+	d. 열 / 행 합치기
+	   rowspan="n" - n 열 합치기
+	   colspan="n" - n 행 합치기
+	   cf.) 합쳐지는 방향은 반대 ! ( 헷갈리니까 ㅎ.. )
+	   당연히 셀 기준 ( td, th )
+	e. <colgroup> 열에 대한 모든 셀 그룹짓기
+	   <col> 태그를 이용
+	   <col> 태그의 span속성을 이용해 열범위 선택 가능
+	   ! 주의 ! 
+	   <colgroup> 안 <col> 태그 개수 = <table> 안 <tr> 개수 만족 필수
+	   이를 위해 빈 <col>을 쓰기도 함 ( 일종의 padding 느낌 )

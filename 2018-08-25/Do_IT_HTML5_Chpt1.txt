@@ -1,0 +1,41 @@
+1. HTML 기초
+  가. 마크업 vs 마크다운
+    a. 마크업 : 특정 글자나 텍스트에 의미 부여
+	   ex) HTML
+	b. 마크 다운 : 마크업이 복잡하고 이용하기 어렵다는 점에서 발생
+	   페이스북의 @태그 기호같이
+	   조금만 알아도 이용하기 편리한 언어
+  나. HTML 표준안
+    a. http://w3c.org/TR/html
+	b. 현재는 5.3 버젼 개발중
+  다. 태그
+    a. 태그안 문자는 소문자를 권장함
+	b. <p> : paragraph
+	c. usage : <태그 속성="값" 속성="값">
+	d. 한 태그의 내부에 다른 태그를 포함 가능
+  라. 공백은 커봐야 한칸!
+    a. HTML은 띄어쓰기가 아무리 많아도 한칸의 공백으로 인식
+  마. HTML 기본 구조
+    a. <!doctype>, <html>, <head>, <body>
+	   크게 4개로 나눌 수 있다.
+	b. <!doctype> : 해당 문서의 유형 지정
+	   ex ) <!doctype html>
+	   강조를 위해 대문자를 사용하기도 함
+	   <!DOCTYPE html>
+	c. <html> : 웹 문서의 시작
+	   lang 속성 - 해당 문서가 사용할 언어
+	   생략해도 무방하나 검색 조건 필터링과 화면 리더기에 도움
+	d. <head> : 문서의 정보 / <body> : 문서의 내용
+  라. <head> <title> : 제목 태그
+     즐겨찾기 추가시 참고하는 태그
+  마. <head> <meta>
+    a. 문자 인코딩, 문자 키워드, 요약 정보
+	b. charset 속성 : 문자 인코딩
+	c. name content 속성 : 문자 요약정보
+  라. HTML 특수 문자 ( Entity )
+    a. space : &nbsp;
+	b. " : &quot;
+	c. & : &amp;
+	d. < > : &lt &gt;
+	   - less / greater
+	e. ( ) : &#40 &#41 -> ascii 값

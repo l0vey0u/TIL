@@ -1,0 +1,54 @@
+2. 텍스트 관련 태그
+  가. block단위 처리 태그
+    a. <h{n}> - 제목
+	b. <p> - 단락
+	   브라우저의 창 너비를 기준으로 자동으로 줄 바꿈이 적용됨
+	c. <br> - 개행, 홀로 태그
+	d. <hr> - 가로선 삽입
+	   텍스트 단락의 주제가 바뀔 때 분위기 전환 효과
+	   CSS로 가로선을 없애기도 한다.
+	   홀로태그
+	e. <blockquote> - 인용구
+	   다른 텍스트보다 안으로 들여쓰기 처리됨
+	   cite 속성을 이용해 사이트 주소를 표시
+	f. <pre> - 입력한 그대로 표시
+	   space n 이 원래는 1로 처리되는데
+	   <pre> 태그는 n개로 처리된다.
+	   <code>, <samp>, <kbd> 태그 사용시 주 사용
+	   cf.) <samp> - sample, <kbd> - keyboard
+  나. line단위 처리 태그
+    a. <strong>, <b> - 굵게
+	   <strong> : 경고/주의사항 등 화면 리더기가 강조할만한 내용
+	   <b> : 문단의 키워드등 굵게 표시하고픈 내용
+	b. <em>, <i> - 기울게
+	   <em> : 중요 내용
+	   <i> : 단순 기울기
+	   생각, 꿈, 기술 용어, 관용구등에 주로 사용
+	c. <q> : line 단위 <blockquote>
+	d. <mark> : 형광펜 효과 
+	   CSS background-color 속성을 통해 하이라이트 색 변경 가능
+	e. <span> : 일부 텍스트 묶기
+	   cf.) <div> - 블록 단위 묶기
+	f. <abbr> - abbrevitation - 약어 표시
+	   usage ) <abbr title="full name"> abbr </abbr>
+	g. <small> : 단어 뜻 그대로, 부가 정보
+	h. <sup>, <sub> : 위첨자 ¹, 아래첨자 ₁ 
+	i. <s> : 취소선 ( 밑줄 중간에 그어지는거 )
+	j. <u> - underline - 단순 밑줄
+  다. 목록 ( Listing )
+    a. 항목 - <li>
+	   여러 항목일땐 </li> 생략 가능
+	b. unorder <ul>
+	   항목 들 앞에 원 / 사각형등의 불릿(bullet)이 붙는다.
+	   불릿은 CSS에서 list-style-type으로 수정 가능
+	c. order <ol>
+	   type 속성을 이용해 순서 정렬
+	   1 - 숫자 (default), a - 영어, i - 로마 숫자 [ 소/대문자 알맞게 처리됨 ]
+	   start 속성을 통해 순서 결정 ( default 1 )
+       reversed 속성 - 역순 포시
+    d. 설명 - desc <dl>
+       <dt> - title 에 {n}개에 <dd> - desc가 매칭
+  라. 주석
+    a. HTML : <!-- -->
+    b. CSS : /**/
+  마. 웹 표준 검사기 : http://validator.w3.org	
