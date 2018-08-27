@@ -1,0 +1,96 @@
+shellphish ..?
+
+oooverflow.io
+
+DEFCON
+
+dkRKrmqns rornldua qkrqhdudrmq zz
+
+ CTFs and Vuln Analysis
+
+  Vuln Anal : Known ( cve.mitre.org ) / Unknown ( custrom app , 0-day Vuln )
+   근데 제로데이가 정확히 머임?
+
+   Auto Vuln Anal : 
+    White Box , Black Box
+     하나는 구조를 다 아는 상태 / 하나는 퍼징
+
+     White - 정적 / Black - 동적
+
+    Black Box Tool 
+     Coverage / Taint Based Fuzzing
+	
+    AFL _ Coverage - based Fuzzer
+    "grey box "
+
+    Instruments binary
+     Mutation of inputs to generate new input
+	
+    Web Vuln ==> crawling componnet , attack component, analysis component 
+
+   Cluster Similiar Pages : 비슷한 부류끼리 묶기 ?
+
+   Evaluaton : wget, skipfish, w3af, state-aware-scanner
+
+   Expert 는 소스코드까지 추측함.
+   
+   Inductive Programming 
+    이걸 해볼수 있을까? -- 머신러닝~ Amarel , Self-Organinzing Systems, 1962
+
+    Logic / Functional
+
+   FlashFill ( POPL 2011 ) : Very Cool
+
+     Key FlashFill Ideas _> Restrict state space, Use DAGs to represent sets of the state space
+    
+     in/out 쌍을 node 로 하고 각 노드들을 관리함 
+     호오 자료구조~
+
+     그때 DAGs 가 이용됨 DAG들 끼리도 Intersect , Partitioning 이 진행됨
+
+   I/O Ex -> RECode -> AWL -> AWLSA
+   
+   Inductive Reverse Engineering
+   (IRE )
+
+     make clone!
+
+   Insight
+    DAG req n+1 node ( n = output len )
+
+    edge O(n^2)
+
+   What inputs do u use 
+
+  "AWL" re
+  wa3f test case 
+ 
+  AWL 되게 강조하네 w3af 랑
+
+
+  [ Future ]
+   Incorporate human intelligent
+   Enhance Expert Humans - 사람은 똑똑하니깡 
+
+   Apply IRE to Bin analy
+
+   무선 접는 키보드 사서 다닐까 
+
+   꽤 까리하네 
+
+   http://sefcom.asu.edu
+   https://adamdoupe.com
+   doupe@asu.edu -> Fuzzer Q&A 각
+   @adamdoupe      
+
+   Q&A
+
+   IV ? -> Catagorizing case 
+   How to choose Input is Difficult Problem Yet..
+
+
+   Next Input base Prev Output? ::> crawl ! , change parameter 
+   조은 알고리즘 따위 아직...
+   Merging similiary site -> enhance scann??
+
+  -> exec Diffent sheet to efficient ! oh ho

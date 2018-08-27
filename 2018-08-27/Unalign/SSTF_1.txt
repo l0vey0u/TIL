@@ -1,0 +1,98 @@
+* 가트너 말에 의한 IOT 라... 여기를 파봐?
+** IOT 보안?
+
+tizen 망한거 아니였나보네 ㅋㅋ
+
+# IOT 보안
+
+@CISCO, @INTEL 워우
+
+실환가 remote controll 작동안함 ㅋㅋㅋㅋㅋㅋ
+
+교수 개 재치있네, 잠에 들지 말라고 돌아온다고 하고, 농담 준비안했는데 헤헷 거리고 ㅋㅋ
+
+The Buzz : IOT
+
+[architecture]
+sec task1 | task A
+Real time OS
+Hardware
+
+HomeSnitch
+HoneyScope
+
+DIOT (Malicious Device )
+
+I Got 99 problems but I'm gonna take a nap and ignore them all.
+ㅋㅋㅋ
+
+< Pyramid >
+
+Self Healing 
+ Device detect attack and can heal? 
+
+ 가능하면 좋겠다.
+
+Many devices share same MAC addr ..... -> WHy?
+
+IOT 기기중에 자기는 공격적인 운전자라서 유용하다는 스트레스 받으면 감지해서 알려주는 IOT 기기 말함 ㅋㅋ
+
+유용하지만 공격의 대상이 된다. 이쁘다 저분...
+
+WiFi / ZigBee :=: Z-Wave / Bluetooth
+
+global key share many device -> one device attacked other device weak ;;
+
+devices.. -> Gateway ( Anomaly IDS [ High False Alram rate ], Sig IDS [ Significant Delay detecting .. ] )
+( OUR Goal -- DIOT : AI Model Learning ! )
+
+https://arxiv.org/pdf/1804.07474.pdf
+
+.인가 -인가 헷갈
+
+DIOT -> Custom Gateway -> [Service Provider]
+
+SOHO Network 라는데 SOHO가 뭐냐
+
+Device FingerPrint -> [ Device Ident < kNN ( ML ) > -> Detect Profile  ] -> Anomaly Detect
+
+큰 비전을 하나 가져야 되..>!!
+
+DIOT - . - > Self Learning Sec Monitor
+
+미라이 감염된 IOT 기기들이 Netflix 서버를 공격하면 
+미국인의 절반이 잠을 못잔데 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+자기도 마찬가지고 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+
+가설
+
+일단 악성코드라면 비정상 행동( 함수라던지 ) + 비정상적으로 많은 트래픽이라던지를 발생
+
+GRU _ Gated Recurrent Unit : 비유 ㅣ 검색어 자동완성
+Neural Network ( RNNs )를 활용
+
+Symbol을 만들고(mapping, seq) Symbol 자동완성식으로 만드는 거지 오호...
+
+Mirai 관련된 문제 만들까????
+ 뭔가 재밌어 보임
+
+VM wth Mirai?
+
+dns base atk 100%/???
+
+udpplain 82.2% ho oh .,.? <- LOW?
+
+왜냐 udpplain : Edimax power flug
+
+Hajime 2016 10
+Persiral 2017 5 : IP cam
+BrickerBot 2017 4 : Tor
+
+Tor Browser !
+
+발표자랑 질문자랑 열심히 영어로 대화해서 뭐라는지 모르겠다 ㅎ...
+아마 번역해서 들어도 모르겠지
+
+옹 인하대 
+
+영어 겁나 잘하신당 ㄷ
