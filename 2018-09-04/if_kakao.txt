@@ -1,0 +1,557 @@
+if(isKakao)
+{
+    print "Hello World~!"
+}
+
+Sess 1. 다음 모바일 첫 화면 개선기
+
+    jake.ko 고재성 
+
+    kjs-01@daum.net
+
+    Q. 아직도 다음 많이 쓰나요 ?
+    A. 사용자는 늘고있는 추세
+
+    portal site - > 사용자들이 "원하는 곳을 쉽게" 찾아 갈 수 있도록 만든 사이트 
+    수집 - 분류 - 선택 - 노출
+    --- 수집 ---
+    Datas -> ( REST API ) -> Contents Management System (CMS) 
+
+    카카오 브런치 아직 서비스 하나보네?..?
+
+    Datas - Kafka ( Queue ) - elasticSearch, Kibana - 검색 통계 
+                            - MySQL - 컨텐츠 내용
+                            - Mongo DB - 컨텐츠 변경 이력 
+
+    특정 작업량이 폭주할 시점에 Scale Out이 가능한 콘텐츠 -> Docker + Apache MESOS
+
+    Talk is Cheap
+    SHow me the code -> Linux tovalds
+
+    --- 분류 ---
+    과거 : 인력에 의존, 당연히 한계
+    ML 을 이용
+     
+     컨텐츠의 제목, 본문 내용, 태그 -> ML -> 분류 예측
+
+     Tensor Flow, fast Text->facebook Api
+     tfidf?
+     
+     --- 선정 ---
+     과거 : 분류와 비슷 
+     저런걸 CMS라 하는 군
+     
+     추천 알고리즘 cf. 아직 인력이 조금 사용되고 있긴 함
+
+     추천 알고리즘 
+
+     특정 조건으로 각각을 필터링 ( 타입, 태그 , 출처, 분류 등) - 특정 주제별 컨텐츠 묶음 ( pool )을 구성
+     추천에 필요한 학습 셋으로 활용
+
+     --- 노출 ---
+     서버 랜더링 이용 - 똑같은 화면, 대규모 트래픽엔 적합, 고성능 | 왜냐 Logicless 해서, 장애에 강함
+
+     화면이 다르다아
+
+     추천API의 문제
+
+      CPU 사용량이 너무 치솟음
+
+      API Client -> Service A ( 이 둘이 응답을 기다리면서 부하가 생김 ) Service B
+       Time out, default data ( fallback data [대비책 데이터]) 로 할 순 있는데
+       그걸로만은 불가능
+
+       "Circuit Breaker" - > Hystrix -> Fallback data 처리
+
+    서킷 브레이커 패턴 신기방기 호오...
+
+    노출 관리, 품질 관리 > 화면이 비어보인다 등의 장애관리
+
+    데드 링크에 대한 알람을 받음 ( 데드링크 : 유저가 클릭했는데 링크가 안떠용 )
+
+    --- 앞으로는? ---
+
+    추천 탭을 제공하는 등의 컨텐츠를 2차 가공하여 서비스를 제공
+
+    관리, 분석 !
+
+    호오 다음 모바일 첫화면이 좀 많은 시스템이 작동하고 있는 것이였군 ..
+
+    mysql / mongo DB
+    변경이력이 많이 들어오기에 Mongo DB
+    log같은 경우 비정형형이라서 몽고 DB가 더 적함 
+
+    
+Sess 2.1 / 이미지로 이미지 검색
+
+    텍스트로 원하는 이미지 검색 -> 연예인들의 공항패션 but 사진 속 컨텐츠가 매우 다양하다면?
+
+    Way 1 . 컨텐츠 키워드 색인 / Mapping 
+
+     But. 노출을 더 향상시키기 위해 쓸데없는 의미없는 키워드를 많이 사용해버림
+
+    Way 2 . Image Query
+
+     구글 이미지 검색 같이 쓰네
+
+     Image ( Query ) -> tree ( Anchor, Positive .... / .... negative ) 
+
+     ML ( How To Learn ? -> 기준점[Anchor]과 연결된 Positive 안 연결된 negative)
+    
+     Positive , Negative 샘플링 
+
+     Anchor 과 Positive 거리 < Anchor 와 Negative 보다 가깝도록 학습 시킴
+
+     이미지 자체는 너무 크니까
+
+     이미지 -> 함수 -> 특정 데이터
+
+     학습 데이터가 완벽할 수는 없기 때문에 버퍼 같은 역할의 Margin 을 추가한다. 
+
+
+     이미지 -> CNN -> 유사도 ( Triplet Loss) < D(A, A+) - D(A, A-)+m]+
+
+     카카오의 테크 리포트를 보세용
+
+     tech.kakao.com ㅇㅋ
+
+     카카오 이미지 Long 클릭 -> 유사 이미지 검색 가능 ( 다음 검색에 있는 이미지 다 가져왔다는데 ? )
+
+     다음 쇼핑 -> 유사한 스타일을 찾아준데 
+
+     아 이런 스타일은 어때요라는게 있네 ㅋㅋ
+
+Sess 2.2 딥러닝을 이용한 (셀럽) 얼굴 인식
+
+    IU, 빅뱅 사진으로 시작 ㅋㅋㅋ
+    블랙핑크 모르겠데 아재요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+
+    얼굴 인식의 과정
+
+    Detection ( 얼굴 검증, 얼굴만을 사각형으로 표시 )
+    Alignment ( 눈, 귀, 코, 입등의 위치를 찾음 )
+    Normalization ( 정규 형태 로 평평하게 얼굴 위치를 옮김 )
+    Recognition ( 인식 )
+
+    중요한 것 1,2,4 지만
+
+    4! 에 대해 알아보자 .
+
+    --- 얼굴 인식 부류 ---
+        Identification  / Verification
+
+        I - 갤러리 ( DB )안에 이미지들이 있다.
+            Probe 라는 이미지가 Req , 갤러리안에서 비슷한 Top5 accu 를 Res 
+        V - TAR@FAR = 0.001 다른 페어가 틀린것이 0.1%일때 몇%를 맞췄나 높으면 좋음
+          - LFW 를 사용
+          - Labeld Faces in the Wild 
+           - 6000장으로 측정 (같은사람, 다른 사람)
+           - wild라 인터넷으로 걍 찾은 것
+           - 사람은 97% / 기계는 99.8% ㅎㄷㄷ
+           - 당연히 DL 을 사용
+           
+    --- 학습 방법 ---
+        Train 
+         학습 영상들 수집 -> conv, bn, act, pooling (CNN?) -> Dimension Reduction ( FC[128,256,512...]) -> SoftMax, Metric Learning
+        Test
+         각 영상들로 Train , Euclidian Distance , Cosine Similarlity
+
+    
+    --- 최근 얼굴 인식 연구 방향 ---
+
+    Triplet Loss ( Google  )
+    Contrastive loss -> 같은건 더 가깝게 , 먼건 더 멀게
+    Center Loss -> 센터를 구해서 센터에 모이도록 
+    Ring loss -> R스페이스 상에서만 모이도록 
+
+    Angular Classification
+
+     Norm Face - weight normaliztion ( 벡터의 내재 ? 뭐래니 )
+     Sphere Face
+     CosFace
+     ArcFace
+
+      자기 클래스와 가깝고 다른 클래스와 멀게
+
+     m1, m2, m3로 저 종류들을 구별 가능
+      - 성능의 차이는 없 (논문이니까 ㅋㅋ)
+    
+    얼굴 인식 DB
+     MSCeleb-1M - 약 10만명, 약 1000만장 ( 과연 한국인이 있을까?)
+
+     VGGFace2 ( FG2018 ) - 9131명, 331만장 
+      cf. optimizer 는 adam이 젤 잘된데 
+      근데 대부분 서양인.. 
+
+      한국인 TAR@FAR -> 0.560 -> 반은 맞추고 반은 틀리네
+    --- 카카오의 얼굴 인식 ---
+
+    모으자 !
+
+    우리는 검색 회사 ( 다음임 ㅋㅋ)
+
+    모으고 , GT Labeling 하고 
+
+    LFW Protocol 사용
+
+    한국인 0.999 ( SoftMax+Center loss ) -> 많이 올랐네~
+
+    생각해봤는데 
+    이미지를 작은 폰트의 텍스트로 변경 가능하지 않을까?? 찾아보자
+
+    모으고 , GT Labeling 이걸 자동화 / 성능 향상
+
+    다음 라이브 픽 ( 서비스 )
+    행사 사진을 Clustering 해줌
+
+    검색한 사람만 보여줌
+
+    연내 API를 오픈소스로 오픈 계획
+
+    참고할 사이트 - 이미지 참고
+
+    cf. resnet 개선? 작은걸 써서 속도를 줄인다는데 뭐래>>>?
+
+    모든 이미지와 비교할 수는 없겠지
+
+    어떻게 수십억개를 처리할까 -> 그대로 말하긴 좀 그래 , 변형한 kNN [ 나중에 Open API 계획 ]
+
+    이제 사람이 엄청 늘어나면 어떻게 될까? 
+
+     -> Feature Dimension을 늘려서 학습하자 ( 중국같은경우는 이래야 됨 ( CCTV ))
+
+    kNN ( k가 숫자 NN ( Nearly Negitber ) 가까운 군집을 찾는것 )
+    이미지 -> CNN ->  데이터를 숫자로 ?
+    통짜로~
+
+    클래스별 ? 전체별 ? -> 문제마다 다르겠지만 전체여도 큰 문제는 아마 없을 것
+
+
+Sess 3. 오픈소스를 사용하고, 준비하는 개발자를 위한 가이드
+
+ 1. 오픈소스 라이선스
+    FOSS ( 저작권자가 소스코드를 공개하여 누구나 자유롭게 사용, 수정, 재배포할 수 있는 자유로운 소프트 웽 )
+    아이작 뉴턴 - 거인의 어꺠 ( 오픈소스를 사용하자 명언 올ㅋ )
+
+    코드를 사용하면서 출처를 밝히자 ( Copyright )
+    출처를 모른다 - 가져온 링크라도 쓰자 ( ex . 퍼가요 )
+
+    오픈 소스 라이선스는 아래로 갈 수록 코드 공개 의무가 강함
+     Free for all - 출처만 밝히면 상관 ㄴㄴ
+      - Pub domain, MIT / X11, BSD, Apache2.0
+     Keep-On - 수정 내용 공개
+     Share-alike - 수정했으면 내가 사용한 코드 전체 공개
+     Network-Protective - 
+    cf. 이미지 참고하여 채우자 ( "화살표가 이어져있다면" 호환가능 이어져있지 않다면 같이 사용하면 안됨 )
+
+    Apache2.0 - 예외 조항이 있다 ( GPL2.0은 예외조항이 있을 수 없게 해놈 ㅋㅋ 같이 사용 불가 )
+
+    LGPL에서 Dynamic Linking 의 경우 변경한것만 공개 
+    GPL vs AGPL -> 웹 서비스를 공개해야 함 AGPL은 ( EX. mongoDB 3.0 cf/ DB serv tool AGPL 3.0 )
+
+    언제 지켜야 하는가
+
+    외부 "배포"
+     바이너리, 소스코드, 판매, 3rd Party, App or Web
+
+    웹 서비스는 AGPL의 경우만 해야함
+
+    배포의 개념 : 소스 코드나 바이너리를 "타인"에게 제공하는 행위 ( USB 로 제공한다면 )
+    오픈소스 Compliance 이슈 증가 -> 모바일 앱, 공개 SW 단체의 모니터링, 저작권자 증가
+
+    OSS 대표 단체 : 오픈소스 침해를 입으면 저 단체 들에 요청 ( 이미지 참고 )
+     그 와중에 GPL Violation 은 소송에서 진적이 없데 ㅋㅋ
+    국내 OSSF 
+
+    SW는 지적 재산권에 의해 보호, 독점 사용 권리를 갖는다. 
+
+     라이선스는 빌려주면서 대여규칙을 적은 것
+
+    저작권법 -> 형사처벌, 판매금지, 소스코드 공개 -> 기업 이미지 손상
+
+    오호 유통업체도 GPL 위반 책임이 있구나.. 
+
+
+    Google vs Oracle
+
+     Google 이 Java API를 썼다!
+
+     API 저작권을 인정하지 않다가 대법원까지 가서 인정, 공정 이용 ? ( 교육, 공익을 위해 사용[안드는 무료다]) -> 아니다 였다가 맞다가 ㅋㅋㅋ
+     안드로이드는 무료일지라도 광고수입이 있자나 ! 
+     구글이 분리하긴 함 
+     구글이 배상해야 한다? -> LG, Samsung 도 손해배상에 엮임 .. 호오 복잡하군
+
+     다중 라이선스 - 하나의 코드를 두가지 이상의 라이선스로 배포
+
+     미국법원에서 오픈소스 라이선스를 집행력있는 계약임을 인정
+
+     호오 . .
+
+     GPL -> GPL 로만 배포가능
+
+     GPL + Apache2.0 에 경우 " 배포 불가 " Why? 특허 보복 (- 사용자가 특허 소송 제기시 라이선스 종류, 사용료 청구)을 GPL2.0에선 보장하지 않음 
+    
+     LGPL2.1 + Apache2.0 -> 결합 방식에 따라 .. Dynamic Linking이면 가능
+
+     http://rankedin.kr/users 에서 1등이 카카오 최중권이래 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+
+     GPL은 차별 제한 불가능 호오..
+
+ 2. 카카오는 어쩌고 있느냐
+
+    Opensource Govenerce
+
+     " 오픈소스를 잘 사용하고, 오픈소스에 기여할 수 있도록 돕는다. "
+    
+    오픈소스 라이선스 확인과 고지문 발급 "자동화, 효율화"
+
+    오픈소스 프로젝트 지원, 오픈소스 사용현황 제공
+
+3. Hermes -> 카카오의 오픈소스 관리 시스템
+
+ Dependency 관리, 고지문 발급 자동화, Protex 연동 ( 소스 코드가 오픈소스 이용했는지 판단해주는 툴 )
+ Github - > Hermes -> Legal Notice ( HTML, Json, MD )
+
+ github.com/kakao  
+
+ 를 보자 ㅋㅋ
+
+ readme는 되게 중요!
+ readme를 진짜 진짜 확 땡기게 작성하자 
+
+
+ 공개 sw 포털
+
+ https://www.oss.kr/license_verify
+
+ 에서 도움을 준다.
+
+ olsi?
+
+ LGPL < GPL < AGPL 
+
+ 오픈소스 출처 고지및 Copylight 필수 
+
+ Hermes도 오픈소스로 갈 준비중
+
+ Daum / Kakao 이던 시절엔 자체적 오픈소스 
+
+ Daum Kakao 가 되면서 서비스가 넘나 많아져서 Hermes 가 탄생
+
+Sess 4. Active X 없는 블록체인 기반 PKI 시스템 
+
+ nate.act / 카카오 페이
+
+ 카카오 페이의 인증 개 궁금 ㄹㅇ
+
+  전자 서명 플랫폼 - 사용자에게 인증서를 발급하고 전자서명을 생성하고 Service Provider 로 전달및 검증 ....
+
+  기존 공인인증서의 역할을 기술적으론 똑같음
+
+
+  공개키 - RSA, ECC
+  인증서 기술 표준 - X.509, PKCS#1
+
+  1999 - 전자 서명법 제정
+
+  Bitcoin , Ethereum > 블록체인
+  Hyperledger
+
+
+ --- PKI ---
+  PKI : 공개키 기반 암호화 
+
+  전자 서명 : 개인 키 로 서명 -> 공개키로 검증 
+
+  마크다운 공부해야겠다
+
+  https 에서도 사용 ( SSL ) -> 인증서를 보여줌
+  Kakao corp가 Jeju 에 있구나
+
+ --- 기존 공인 인증서의 문제 /  해결 ---
+ -- 엑티브 X --
+ 2000년대 초반 무조건 ie...
+ 얘는 MS의 설치파일 , IE의 플러그인인것
+ 가장 큰 문제는 사용자가 불편.. 18!!
+ 
+ 액티브엑스를 설치하지 않으면 안되서 그냥 암생각없이 확인을 누름 - 바이러스인지 안전한지 알 길이 없다.
+ ( 안좋은 습관까지 만듬 )
+
+ 카카오는 Active X 대신 카카오톡에 비밀키에 논다
+ Active X는 브라우저가 유저의 저장소에 쉽게 접근이 불가능한점이 문제였음
+ 어떤 브라우저는 상관 ㄴ
+ -- 비밀 키 관리 --
+ 
+ 맥북 메모장 개이쁘다
+
+ 맥북사고싶다 ㄹㅇ...
+
+ NPKI 폴더 복사 가능 ㅋㅋㅋ
+ 보안성 = 사용자 비번 ㅋㅋㅋㅋ
+ BF해버리면 어쩔
+
+ 카카오는 서버 검증 추가 ( 모바일 운영체제가 부여 [ android keystore , ios keychain ] )
+ --- 블록체인 --- 
+ -- 비트코인 공개 네트워크 활용 -- > 오픈 시 사용
+ 카카오 페이가 블록체인이 필요했던 이유? : 전자서명 인증서에 대한 검증
+ 카카오 페이의 서버를 의심할 수 있다. 이걸 어캐 믿어 ; ㅇ ㅇㅈ
+
+ 블록체인의 신뢰가 필요하다.
+ 비트코인 블록체인은 거래가 목표였다.
+ 보낸금액과 받은 금액이 다름 ( 마이너가 조금 가져감 )
+ OP_RETURN
+  인증서가 목적이였으니 
+  비트코인이 데이터를 닮을 공간은 OP_RETURN
+  제한적이였다. 인증서의 해시값을 전달.
+
+  비트코인의 문제 ( Finality of Bitcoin )
+
+  블록생성 10분 
+  Waiting for 6 Confirmations - 버려지지 않을려면 판매자가 최소 6개의 컨펌을 받고 커피를 줘야 안전하다
+  블록포함 시점 불분명 - 트랜젝션이 폭발해서 블록포함 시 , 2~3주 실화?
+
+ -- 하이퍼 레저 패브릭 -- > 전환 
+ 다른 네트워크로 전환
+
+  Hyperledger Fabric : 리눅스 설립한곳
+   
+   Enterprise - 마이너에게 코인을 주는 이유를 없앰 [ 마이너들은 왜 굳이 참여해야 되냐가 있지만 기업들은 자신들의 서비스를 위해 참여 ]
+   Private & Permissioned Network - 
+   No Coin But Asset
+
+   Hash Chain, Shared Ledger , Smart Contracts : 얘내들은 블록체인이니까 동일
+
+   마이너들이 서로 경쟁하는데 원래 ( 보상이 있으니까 )
+   Ordering Service ( 중앙화 노드들이 참여 - 복수 노드가 참여 - 그렇다해도 블록체인의 의미가 있는가 )
+
+   블록생성 2초
+   데이터가 블록에 포함
+
+ Kakao AI Report 궁금
+
+ Sess 5. 글로벌 게임 플랫폼에서 무정지, 무점검 서버 개발과 운영 사례
+
+ aws에서 명령어 오타 : 서버 여러대가 지워짐
+
+ 깃헙, 인스타그램 + 블리자드  등등이 장애 
+ 1500억 히익...
+
+    장애를 줄이려면 - Blizzard Classic Team
+
+    Classic Team : 옛 프로그램을 현대 환경에 맞춰 돌리도록 
+
+    NCS - New Classic Server 를 사용
+
+    Server Struct 
+
+    Rabbit MQ - > 중앙 메시지 처리
+
+    Client Web API Game Proxy 끼리의 연결은 없다.
+
+    C++, Python , C# 등을 사용
+
+    SCM ( Source Code Management) 은 역시 Git 
+
+    CD/ CI 는 Jenkins로 Organizing, Docker Instance
+
+    Guardian 
+
+    윈도우는 crontab 없나?
+
+    무정지 & 무장애를 어렵게 하는 다섯가지 문제와 해결방법
+
+     1. Old Version ( Version Update )
+      - 패치 : 바이너리 교체, 로직 재시작, 새 데이터 로드, 하위 호환 불가 문제 등등
+       패치를 위해 서버를 내리는 경우가 많다
+
+       classic Team은 그냥 서버를 운영하면서 패치한 새로운 서버를 만들고 완성후에 새로운 서버로 옮긴다.
+       호오..Flip 방식 ( 두개의 사이트를 이용 ) 
+
+       Deploy를 상당히 깔끔
+       Rollback 도 쉽다 -> 걍 Deactive 상태인 서버를 Flipping
+       서비스에 지장없이 조사 가능 -> Deactive 서버를 조사
+
+       기술 1. VM
+       대기 자원 낭비 줄임
+       기술 2. 하위호환 API 시스템
+       하위호환 되도록해서 Flipping 해도 서비스엔 지장이 없도록
+       기술 3. Clean Local
+       서버엔 설정 파일 없 / 자동으로 수집되는 로그파일 -> 깔끔하게 Deploy를
+       기술 4. CD/ CI Automation
+       Jenkins로 원클릭
+     2. 설정의 변경
+        재시작 없이 설정값을 바꿀수 없는 경우?
+         최악의 시나리오 . 모든 서비스를 재시작해야 되는 경우 ) 서버 구성이 바뀌어서 , 서버가 같은 설정 파일을 공유
+
+        Flush System : 설정 파일을 서버에 존재 X 
+        flush가 하는 일처럼 Google Protobuf 프로토콜을 이용해서 설정을 정의
+
+        선택적으로 flush 도 가능
+
+     3. 어플리케이션내에 메모리에 상주중인 데이터? -> 상수 변경 ? 
+        상수를 바꾸려면 컴파일을 새로해야 함...
+        var system 
+         외부에서 상수 값을 바꿀수 있게
+         Set 명령을 이용
+        Query System 의 일부
+         작동중인 서비스의 등록된 함수를 쉽게 호출 ( RPC )
+
+         개발자가 아닌사람이 게임내 값을 바꾸고 싶을때 유용 호오, 신기하군 외부는 쉽게 내부는 안되게 
+     4.Scaling , 서버의 규모가 증감할떄?
+        서버 구성과 관련된 설정 변경 , 서버간 연결
+
+        일단 서버 구성과 관련된 설정 X
+        완벽한 Object 형 ㅋㅋ
+        Rabbit MQ를 사용 서버간의 통신을 MQ를 사용하여 재시작이 필요 X
+        ( MQ 가 뭐지 조사하자 )
+
+     5. 장애 ( Hardware Fault )
+
+        장애에 견디고 복구 가능한가?
+
+        복구를 얼마나 쉽게가능한가.
+
+        01 . Health Check Protocol 
+        모든 서비스가 건강 체크 프로토콜이 있다.
+
+        02. Pool에서 이중화
+         장애 감지시 Service pool에서 제거 
+        
+        03. 서버 종류별 Pool
+         
+        04. 원인 모를 장애시의 대처
+
+         Trouble Shoot( 1번 처럼 Site Fliping )
+
+    DevOps
+        조직 DevOps
+        개발 방법론 DevOps
+        문화로써의 DevOps
+            누구나 코드 수정
+            Github의 Pull Req, Approval을 통해 머지
+            Review & Approval 할 사람을 정할 수 있다 - 안바쁜 사람? ㅎㅎ
+
+            브랜치 전략은 Git Flow를 따른다
+            장애 대응할 사람이 Active 하게 한다.
+                해결할 수 있는 일은 자기가 해준다.
+            아까 쿼리 시스템 처럼 엔지니어 가 아닌 사람도 쉬운방법을 통해 시스템 수정
+            실수를 피하거나 두려워하지 않고 제대로 개선하는 쪽을 선호
+
+        테스트 서버 운영 전략 - 테섭 / 라이브의 배포방식이 같아
+
+    개발부터 무정지를 염두해두고 개발 ( 하위 호환 )
+
+    이미지 참고해서 좀 수정해야 겠다 ㅋㅋ
+    
+    마크다운 참고해서 작성해볼까? ㅋ
+
+    Dev Ops 에 미래 ?
+
+        Serverless - 거대한 컴퓨터에 올리고 해당 시스템 사용
+
+        아마존 시스템 같이 , 앞으로 클라우드 호스팅이 부담해주는게 더 좋을 것 같다.
+
+        아 Serverless가 회사에서 서버를 안쓴다 그런거구나 ㅋㅋ 
+
+    AI : 손정의 
+        ARM 에서 AI Chip 을 생각중이래 
