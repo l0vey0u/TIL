@@ -4,3 +4,7 @@
 
 ex ) 병원, Q&A
 
+
+---
+[top-10-web-development-trends-to-follow-in-2019](https://dzone.com/articles/top-10-web-development-trends-to-follow-in-2019)
+
