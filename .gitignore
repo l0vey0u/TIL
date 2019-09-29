@@ -1,0 +1,7 @@
+*.log
+*.swp
+*.bak
+/docs/.vuepress/dist/
+/node_modules/
+yarn-*
+yarn.*
