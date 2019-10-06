@@ -22,5 +22,5 @@
 
 ---
 > 참조 글
-[파이썬 코드 스타일 이야기 - (1) Style Checker, Formatter들 구경하기 - PlanB](https://velog.io/@city7310/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%BD%94%EB%93%9C-%ED%8F%AC%EB%A7%A4%ED%84%B0-%EC%9D%B4%EC%95%BC%EA%B8%B0-5wjxdei9iv)
-[쿠키런 1년, 서버개발 분투기 - Brian Hong](https://www.slideshare.net/serialxnet/1-35304689?from_m_app=android)
+- [파이썬 코드 스타일 이야기 - (1) Style Checker, Formatter들 구경하기 - PlanB](https://velog.io/@city7310/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%BD%94%EB%93%9C-%ED%8F%AC%EB%A7%A4%ED%84%B0-%EC%9D%B4%EC%95%BC%EA%B8%B0-5wjxdei9iv)
+- [쿠키런 1년, 서버개발 분투기 - Brian Hong](https://www.slideshare.net/serialxnet/1-35304689?from_m_app=android)
