@@ -17,7 +17,7 @@
 > ActivityManagerService Task List
 - [ActivityManagerService.java](https://android.googlesource.com/platform/frameworks/base/+/4f868ed/services/core/java/com/android/server/am/ActivityManagerService.java)를 보면 정확한 원리는 모르겠지만 TaskRecord에 Task들을 저장하는 구문들이 보인다.
 
-  즉 dummy에 계속 저장되고 있는 것이다. 이렇기에 갑작스런 재부팅에도 리스트는 계속 남아있던 것이다.
+  즉 dummy에 계속 저장되고 있고 이렇기에 갑작스런 재부팅에도 리스트는 계속 남아있던 것이다.
   
   그 후 이 dummy를 부팅 시에 불러오는 것이다.
   
