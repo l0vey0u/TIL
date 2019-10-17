@@ -11,3 +11,5 @@
 - [뱅크샐러드 기술 블로그](https://medium.com/rainist-engineering)
 - [웹 개발자 : wedul 블로그](https://wedul.site)
 - [SK INFOSEC EQST INSIGHT](https://www.skinfosec.com/newsRoom/eqstInsight/eqstInsightList.do)
+- [FrontEnd 개발자 : 문동욱 블로그](https://evan-moon.github.io)
+- [캡틴 판교](https://joshua1988.github.io/)
