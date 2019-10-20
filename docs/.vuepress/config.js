@@ -8,7 +8,7 @@ module.exports = {
 			{ text: 'Blog', link: 'https://syru.life' }
 		],
 		sidebar: getSidebarArr()
-	}
+	},
 	plugins: {
 		'seo': {
 			siteTitle: (_, $site) => $site.title,
