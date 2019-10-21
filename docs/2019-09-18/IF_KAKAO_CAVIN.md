@@ -1,12 +1,11 @@
-ovenapp.io
+# IF_KAKAO Keynote : CAVIN
+
+[ovenapp.io](ovenapp.io)
 
 대학 친구이자 룸메이트 였던 대현이가 즐겨 쓰던 그 사이트를 만든 개발자의
 키노트 PDF파일을 얻어서 구경하였다.
 
-https://mk.kakaocdn.net/dn/if-kakao/conf2019/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C_2019/T04-S03.pdf
-
-### 프론트 엔드 기술로 동료들 삶의 질 높여주기
----
+## 프론트 엔드 기술로 동료들 삶의 질 높여주기
 > 웹 앱
 - 누구나 사용이 편한 웹 앱
 - SPA : " 모든 액션을 한 페이지에서 "
@@ -26,3 +25,7 @@ https://mk.kakaocdn.net/dn/if-kakao/conf2019/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8
 - 복잡한 일을 단순화 해보기
 - 동료들에게 깜짝 선물
 - 일하는 문화 개선에 자신도 직접 참여해보자.
+
+---
+> 참조 포스트
+- [프론트 엔드 기술로 동료들 삶의 질 높여주기](https://mk.kakaocdn.net/dn/if-kakao/conf2019/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C_2019/T04-S03.pdf)
