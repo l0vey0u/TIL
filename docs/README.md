@@ -10,6 +10,7 @@
 - [ZIGZAG 기술 블로그](https://devblog.croquis.com/ko/)
 - [뱅크샐러드 기술 블로그](https://medium.com/rainist-engineering)
 - [SK INFOSEC EQST INSIGHT](https://www.skinfosec.com/newsRoom/eqstInsight/eqstInsightList.do)
+- [RIDI Tech Blog](https://www.ridicorp.com/blog/slides/)
 
 > 개인 개발자 블로그
 - [웹 개발자 : wedul 블로그](https://wedul.site)
