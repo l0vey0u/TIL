@@ -66,7 +66,7 @@
 - CVE가 이에 속한다.
 - 보안 약점에 속한다.
 
-- [참고 발표자료 - 보안약점 vs 보안취약점](http://sigpl.or.kr/conf/2013/4.pdf)
+[참고 발표자료 - 보안약점 vs 보안취약점](http://sigpl.or.kr/conf/2013/4.pdf)
 
 **추가 조사 ( 보안 위험 vs 보안 위협 )**
 > 보안 위험
@@ -75,4 +75,4 @@
 > 보안 위협
 - 보안 사고에 위협을 일으킬 수 있는 잠재적 원인이나 행위
 
-- [참고 포스트 - 정보보안실무, Tistory.Jeongchul](https://jeongchul.tistory.com/435)
+[참고 포스트 - 정보보안실무, Tistory.Jeongchul](https://jeongchul.tistory.com/435)
