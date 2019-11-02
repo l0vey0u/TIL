@@ -1,7 +1,7 @@
 module.exports = {
 	title: 'TIL',
 	description: 'Today I Learned',
-	base: "/",
+	base: "http://til.syru.dev",
 	themeConfig: {
 		nav: [
 			{ text: 'GitHub', link: 'https://github.com/l0vey0u' },
