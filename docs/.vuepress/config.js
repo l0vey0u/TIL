@@ -6,7 +6,7 @@ module.exports = {
 		nav: [
 			{ text: 'GitHub', link: 'https://github.com/l0vey0u' },
 			{ text: 'Blog', link: 'https://blog.syru.dev' },
-			{ text: 'I_AM', link: 'https://github.com/l0vey0u/RESUME'},
+			{ text: 'Resume', link: 'https://github.com/l0vey0u/RESUME'},
 		],
 		sidebar: getSidebarArr()
 	},
