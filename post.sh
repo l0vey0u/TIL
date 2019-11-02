@@ -11,7 +11,7 @@ git push origin master
 npm run docs:build
 
 cd docs/.vuepress/dist
-
+echo 'til.syru.dev' > CNAME
 rm -rf .git
 
 git init
