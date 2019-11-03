@@ -8,9 +8,7 @@ module.exports = {
             { text: 'Blog', link: 'https://blog.syru.dev' },
             { text: 'Resume', link: 'https://github.com/l0vey0u/RESUME' }
         ],
-//        sidebar: getSidebarArr()
-		sidebar: 'auto',
-		sidebarDepth: 4
+        sidebar: getSidebarArr()
     },
     plugins: {
         seo: {
@@ -57,6 +55,7 @@ function getSidebarArr() {
         }
     });
     sidebarArr.unshift(makeSidebarObject('', HomeFilelist));
+	sidebarArr = [{title:2019, children:[{title:08, children:['/2019/08/']}, {title:09, children:['/2019/09/']}, {title:10, children:['/2019/10/']}]}] // TEST Line
     return sidebarArr;
 }
 function makeSidebarObject(folder, mdfileList) {
