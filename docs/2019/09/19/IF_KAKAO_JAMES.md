@@ -13,5 +13,6 @@
 - Warm Start는 실제코드 실행만 진행하여 15배 정도 빠르게 진행된다.
 - Cold Start로 안 가게 하는 것이 중요. Warm-UP Event를 걸어주자
 
-
-[ 참조 : https://mk.kakaocdn.net/dn/if-kakao/conf2019/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C_2019/T01-S05.pdf ]
+---
+> 참조 발표자료
+- [클라우드 환경에서의 Serverless Service 개발 - If Kakao, James](https://mk.kakaocdn.net/dn/if-kakao/conf2019/%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C_2019/T01-S05.pdf)

@@ -5,4 +5,5 @@
 2. 개행 효과를 위해선 한 줄을 비우고 개행
 - 즉, 두번 개행 처리
 ---
-[ Refer . https://about.gitlab.com/handbook/product/technical-writing/markdown-guide/ ]
+> 참조 포스트
+- [GitLab Markdown Guide](https://about.gitlab.com/handbook/product/technical-writing/markdown-guide/)

@@ -18,4 +18,5 @@
 - 피해가 적다면 모든 피해를 대비할 수는 없기에 넘어가자.
 
 ---
-[ 참조 - http://woowabros.github.io/experience/2019/09/19/programmer-murphy-law.html ]
+> 참조 포스트
+- [개발자와 머피의 법칙 - 우아한형제들](http://woowabros.github.io/experience/2019/09/19/programmer-murphy-law.html)
