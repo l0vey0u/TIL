@@ -9,7 +9,8 @@ module.exports = {
             { text: 'Resume', link: 'https://github.com/l0vey0u/RESUME' }
         ],
 //        sidebar: getSidebarArr()
-		sidebar: auto
+		sidebar: 'auto',
+		sidebarDepth: 4
     },
     plugins: {
         seo: {
