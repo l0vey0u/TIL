@@ -18,6 +18,7 @@
 - [캡틴 판교](https://joshua1988.github.io/)
 - [프로그래머 : 진유림 TIL](http://milooy.github.io/TIL)
 - [VELOPERT](https://velopert.com/)
+- [개발자 : 정미량](https://miryang.dev)
 
 > 개발자 커뮤니티
 - [dev.to](https://dev.to/)
