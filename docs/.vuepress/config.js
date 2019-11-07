@@ -55,7 +55,7 @@ function getSidebarArr() {
         }
     });
     sidebarArr.unshift(makeSidebarObject('', HomeFilelist));
-	sidebarArr = [{title:2019, children:[{title:08, children:['/2019/08/']}, {title:09, children:['/2019/09/']}, {title:10, children:['/2019/10/']}]}] // TEST Line
+	sidebarArr = [{title:2019, children:[{title:08, children:['/2019/08/']}, {title:09, children:['/2019/09/']}, {title:10, children:['/2019/10/']}, {title:11, children:['/2019/11/']}]}] // TEST Line
     return sidebarArr;
 }
 function makeSidebarObject(folder, mdfileList) {
