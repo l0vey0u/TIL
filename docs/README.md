@@ -1,6 +1,6 @@
 # Today I Learned
 
-덕호가 오늘 새로 배운 것을 불규칙적으로 commit 합니다. 
+" 나는 **속도**가 다를 뿐 올바른 **목적지**로 가고 있다. " 는 **믿음**에서 시작합니다.
 
 ![텍스트](https://i.imgur.com/sRzoLoa.jpg)
 
