@@ -5,7 +5,7 @@ module.exports = {
     themeConfig: {
         nav: [
             { text: 'GitHub', link: 'https://github.com/l0vey0u' },
-            { text: 'Blog', link: 'https://blog.syru.dev' },
+            { text: 'Blog', link: 'https://syru.life' },
             { text: 'Resume', link: 'https://info.syru.dev' }
         ],
         sidebar: getSidebarArr()
