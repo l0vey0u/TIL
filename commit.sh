@@ -17,6 +17,6 @@ rm -rf .git
 git init
 git add -A
 git commit -m "$1 $(date +%Y%m%d)"
-git push -f git@github.com:l0vey0u/TIL.git master:gh-pages
+git push -f git@til.github.com:l0vey0u/TIL.git master:gh-pages
 
 cd -
