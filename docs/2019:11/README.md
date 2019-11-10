@@ -3,3 +3,5 @@
 > 7일
 - ```Git``` : [Git Branch 간단히 삭제하기](./HOWDeleteGitBranch.md)
 
+> 10일
+- ```Git``` : [여러 Repo에서 ssh인증 설정하기](./KeyDuplicationSolution.md)
