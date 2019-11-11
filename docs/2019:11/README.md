@@ -5,3 +5,6 @@
 
 > 10일
 - ```Git``` : [여러 Repo에서 ssh인증 설정하기](./KeyDuplicationSolution.md)
+
+> 11일
+- ```Vue``` : [Vue UI 페이지, Connection Refused 문제 해결하기](./VueUIErrorFix.md)
