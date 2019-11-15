@@ -8,3 +8,6 @@
 
 > 11일
 - ```Vue``` : [Vue UI 페이지, Connection Refused 문제 해결하기](./VueUIErrorFix.md)
+
+> 15일
+- ```sqli```, ```web``` : [웹 인코딩에서 + 는 add가 아닌 space](./WebEncode.md)
