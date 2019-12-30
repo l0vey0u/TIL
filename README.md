@@ -6,6 +6,3 @@
 
 > HOW TO
 - ./commit.sh "str"
----
-footer: '나는 속도가 다를 뿐이다.'
----
